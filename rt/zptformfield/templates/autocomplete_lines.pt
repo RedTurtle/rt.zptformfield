@@ -1,0 +1,80 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="rt.zptformfield"
+      xml:lang="en" lang="en">
+
+<head>
+<metal:define define-macro="javascript_helpers">
+	<script type="text/javascript" src=""
+	        tal:attributes="src string:${portal_url}/++resource++rt.zptformfield.js/autocomplete_lines.js">
+	</script>
+</metal:define>
+</head>
+
+<body>
+<metal:define define-macro="field"
+              tal:define="fieldLabel fieldLabel|nothing;
+						  fieldHelp fieldHelp|nothing;
+						  required required|nothing;
+						  fieldType fieldType|string:text;
+						  pattern pattern|nothing">
+
+    <div class="field zptformfield zptAutocompletelinesfield"
+	     data-fieldname="xxx"
+		 data-ajax-source="http://..."
+	     tal:attributes="data-fieldname fieldName;
+		                 data-ajax-source source;
+						 ">
+    
+        <label for="" tal:attributes="for string:new_${fieldName}"
+		       tal:condition="fieldLabel"
+		       tal:content="fieldLabel">New field</label>
+    
+        <span class="fieldRequired" title="Required"
+              i18n:domain="plone"
+              i18n:attributes="title title_required;"
+			  tal:condition="required"
+              i18n:translate="label_required">(Required)</span>
+        <br tal:condition="not:fieldHelp"/>
+    
+        <div class="formHelp"
+             tal:condition="fieldHelp"
+             tal:content="fieldHelp">
+        </div>
+    
+        <input type="text"
+               id="new_xxx"
+               name="new_xxx"
+               size="40"
+               value=""
+			   class="newAutocompleteLinesField"
+               tal:attributes="id string:new_${fieldName};
+                               name string:new_${fieldName};
+                               type fieldType;
+							   pattern python:pattern if pattern else nothing"
+               />
+
+		<ul style="display:none" class="fieldModel">
+			<li>
+				<strong></strong>
+				<input type="hidden" />
+			    <a class="deleteItem" href="" title="Delete this item from the selection"
+				   i18n:attributes="title">
+			    	<img src="" alt="Delete"
+					     i18n:attributes="alt"
+				         tal:attributes="src string:${portal_url}/++resource++rt.zptformfield.resources/delete.png" />
+				</a>
+			</li>
+		</ul>
+
+		<ul class="fieldValues">
+		</ul>
+
+    </div>
+
+</metal:define>
+</body>
+
+</html>
