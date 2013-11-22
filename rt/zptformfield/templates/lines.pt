@@ -67,7 +67,8 @@
 			</li>
 		</ul>
 
-		<ul class="fieldValues">
+		<ul class="fieldValues"
+		    tal:attributes="class python:('fieldValues ' + listClass) if listClass else default">
 		</ul>
 
     </div>
