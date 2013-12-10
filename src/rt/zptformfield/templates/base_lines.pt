@@ -1,0 +1,27 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="rt.zptformfield"
+      xml:lang="en" lang="en">
+
+<metal:define define-macro="rt.zptformfield.lines_model">
+
+<ul style="display:none" class="fieldModel">
+	<li>
+		<strong></strong>
+		<input type="hidden" />
+	    <a class="deleteItem" href="" title="Delete this item from the selection"
+		   i18n:attributes="title">
+	    	<img src="" alt="Delete"
+			     i18n:attributes="alt"
+		         tal:attributes="src string:${portal_url}/++resource++rt.zptformfield.resources/delete.png" />
+		</a>
+	</li>
+</ul>
+
+<ul class="fieldValues"
+    tal:attributes="class python:('fieldValues ' + listClass) if listClass else default">
+</ul>
+
+</metal:define>

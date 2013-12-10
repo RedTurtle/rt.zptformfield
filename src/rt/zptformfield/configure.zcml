@@ -8,6 +8,14 @@
 
    <browser:page
        for="*"
+       name="rt.zptformfield.lines_model"
+	   class=".base.BaseMacroView"
+	   template="templates/base_lines.pt"
+       permission="zope.Public"
+       />
+
+   <browser:page
+       for="*"
        name="rt.zptformfield.lines"
 	   class=".lines.LinesMacroView"
 	   template="templates/lines.pt"

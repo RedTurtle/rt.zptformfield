@@ -5,7 +5,7 @@ version = '0.1.0'
 
 setup(name='rt.zptformfield',
       version=version,
-      description="Some ZPT macros for Zope/Plone development",
+      description="Some ZPT macros for Zope/Plone HTML forms development",
       long_description=open("README.rst").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from
@@ -21,8 +21,9 @@ setup(name='rt.zptformfield',
       author_email='sviluppoplone@redturtle.it',
       url='http://github.com/RedTurtle/rt.zptformfield',
       license='GPL',
-      packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['rt'],
+      packages=find_packages('src', exclude=['ez_setup']),
+      package_dir={'': 'src'},
       include_package_data=True,
       zip_safe=False,
       install_requires=[
