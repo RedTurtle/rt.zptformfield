@@ -23,10 +23,12 @@
                           portal_url context/@@plone_portal_state/portal_url;
                           fake_field_name fake_field_name|fieldName;
                           search_index search_index|string:SearchableText;
+                          cssFieldAdditionalClasses cssFieldAdditionalClasses|nothing;
                           ">
 
     <div class="field zptformfield zptReferenceField" data-fieldname="xxx"
-         tal:attributes="data-fieldname fieldName;">
+         tal:attributes="data-fieldname fieldName;
+                         class python: 'field zptformfield zptReferenceField ' + cssFieldAdditionalClasses if cssFieldAdditionalClasses else default;">
     
         <label for="" tal:attributes="for string:new_${fieldName}"
                tal:condition="fieldLabel"

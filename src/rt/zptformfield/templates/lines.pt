@@ -18,10 +18,13 @@
               tal:define="fieldLabel fieldLabel|nothing;
                           required required|nothing;
                           fieldType fieldType|string:text;
-                          pattern pattern|nothing">
+                          pattern pattern|nothing;
+                          cssFieldAdditionalClasses cssFieldAdditionalClasses|nothing;
+                          ">
 
-    <div class="field zptformfield zptLinesfield" data-fieldname="xxx"
-         tal:attributes="data-fieldname fieldName;">
+    <div class="field zptformfield zptLinesField" data-fieldname="xxx"
+         tal:attributes="data-fieldname fieldName;
+                         class python: 'field zptformfield zptLinesField ' + cssFieldAdditionalClasses if cssFieldAdditionalClasses else default;">
     
         <label for="" tal:attributes="for string:new_${fieldName}"
                tal:condition="fieldLabel"

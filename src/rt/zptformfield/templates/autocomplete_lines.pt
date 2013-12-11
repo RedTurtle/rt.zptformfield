@@ -19,13 +19,16 @@
                           fieldHelp fieldHelp|nothing;
                           required required|nothing;
                           fieldType fieldType|string:text;
-                          pattern pattern|nothing">
+                          pattern pattern|nothing;
+                          cssFieldAdditionalClasses cssFieldAdditionalClasses|nothing;
+                          ">
 
-    <div class="field zptformfield zptAutocompletelinesfield"
+    <div class="field zptformfield zptAutocompleteLinesField"
          data-fieldname="xxx"
          data-ajax-source="http://..."
          tal:attributes="data-fieldname fieldName;
                          data-ajax-source source;
+                         class python: 'field zptformfield zptAutocompleteLinesField ' + cssFieldAdditionalClasses if cssFieldAdditionalClasses else default;
                          ">
     
         <label for="" tal:attributes="for string:new_${fieldName}"
