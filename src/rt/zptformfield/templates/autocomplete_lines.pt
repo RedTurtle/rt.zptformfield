@@ -56,7 +56,7 @@
                                pattern python:pattern if pattern else nothing"
                />
 
-        <metal:lines_model use-macro="here/base_lines/rt.zptformfield.lines_model" />
+        <metal:lines_model use-macro="here/rt.zptformfield.lines_model/base_lines" />
 
     </div>
 

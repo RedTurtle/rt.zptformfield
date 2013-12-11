@@ -5,7 +5,8 @@
       i18n:domain="rt.zptformfield"
       xml:lang="en" lang="en">
 
-<metal:define define-macro="rt.zptformfield.lines_model">
+<metal:define define-macro="base_lines"
+   tal:define="listClass listClass|nothing">
 
 <ul style="display:none" class="fieldModel">
 	<li>
@@ -25,3 +26,5 @@
 </ul>
 
 </metal:define>
+
+</html>

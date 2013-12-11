@@ -1,0 +1,77 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="rt.zptformfield"
+      xml:lang="en" lang="en">
+
+<head>
+<metal:define define-macro="javascript_helpers">
+    <script type="text/javascript" src=""
+            tal:attributes="src string:${portal_url}/++resource++rt.zptformfield.js/reference.js">
+    </script>
+</metal:define>
+</head>
+
+<body>
+<metal:define define-macro="field"
+              tal:define="fieldLabel fieldLabel|nothing;
+                          required required|nothing;
+                          startup_directory startup_directory|context/absolute_url;
+                          helper python:context.restrictedTraverse('refbrowserhelper', nothing);
+                          at_url helper/getAtURL|nothing;
+                          portal_url context/@@plone_portal_state/portal_url;
+                          fake_field_name fake_field_name|fieldName;
+                          search_index search_index|string:SearchableText;
+                          ">
+
+    <div class="field zptformfield zptMultivaluedReferenceField" data-fieldname="xxx"
+         tal:attributes="data-fieldname fieldName;">
+    
+        <label for="" tal:attributes="for string:new_${fieldName}"
+               tal:condition="fieldLabel"
+               tal:content="fieldLabel">New field</label>
+    
+        <span class="fieldRequired" title="Required"
+              i18n:domain="plone"
+              i18n:attributes="title title_required;"
+              tal:condition="required"
+              i18n:translate="label_required">(Required)</span>
+        <br tal:condition="not:fieldHelp"/>
+    
+        <div class="formHelp"
+             tal:condition="fieldHelp"
+             tal:content="fieldHelp">
+        </div>
+
+        <div id="atrb_xxx" class="overlay overlay-ajax"
+             tal:attributes="id string:atrb_${fieldName};">
+              <div class="close"><span i18n:domain="plone" i18n:translate="">Close</span></div>
+            <div class="pb-ajax">
+                <div class="overlaycontent" style="font-size: 125%"></div>
+            </div>
+        </div>
+
+        <input type="hidden" name="xxx:default:list" value=""
+		       tal:attributes="name string:${fieldName}:default:list" />
+        <input type="hidden" value="1" name="xxx-sortable"
+		       tal:attributes="name string:${fieldName}-sortable"/>
+
+        <div style="float: left"> <!-- don't remove this. it is needed for DOM traversal -->
+        </div>
+        <ul class="visualNoMarker" id="ref_browser_items_xxx"
+		    tal:attributes="id string:ref_browser_items_${fieldName}">
+        </ul>
+
+        <input type="button" rel="#atrb_xxx" src=""
+		       class="searchButton addreference" value="Add..."
+			   i18n:domain="plone" i18n:attributes="value label_add;"
+			   tal:attributes="rel string:#atrb_${fieldName};
+			                   src string:${startup_directory}/refbrowser_popup?fieldName=${fieldName}&amp;fieldRealName=${fake_field_name}&amp;at_url=${at_url}&amp;search_index=${search_index};" />
+
+    </div>
+
+</metal:define>
+</body>
+
+</html>

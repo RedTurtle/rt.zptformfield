@@ -54,7 +54,7 @@
                tal:attributes="id string:addButton_${fieldName};
                                value labelAddButton|context/@@rt.zptformfield.lines/i18n_button_add_label" />
 
-        <metal:lines_model use-macro="here/base_lines/rt.zptformfield.lines_model" />
+        <metal:lines_model use-macro="here/rt.zptformfield.lines_model/base_lines" />
 
     </div>
 

@@ -4,10 +4,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-11-21 16:06+0000\n"
+"POT-Creation-Date: 2013-12-11 14:10+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Last-Translator: Luca Fabbri <keul@redturtle.it>\n"
+"Language-Team: RedTurtle Technology <sviluppoplone@redturtle.it>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,13 +22,15 @@ msgstr ""
 msgid "Add"
 msgstr "Aggiungi"
 
-#: ../templates/autocomplete_lines.pt:65
-#: ../templates/lines.pt:63
+#: ../templates/base_lines.pt:17
 msgid "Delete"
 msgstr "Elimina"
 
-#: ../templates/autocomplete_lines.pt:63
-#: ../templates/lines.pt:61
+#: ../templates/reference.pt:74
+msgid "Delete selection"
+msgstr "Elimina selezione"
+
+#: ../templates/base_lines.pt:15
 msgid "Delete this item from the selection"
 msgstr "Elimina questo elemento dalla selezione"
 

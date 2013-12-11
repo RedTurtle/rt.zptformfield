@@ -1,0 +1,51 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="rt.zptformfield">
+
+   <include package="archetypes.schemaextender" />
+   <include package="archetypes.referencebrowserwidget "/>
+   
+   <adapter factory=".extender.FooExtender" />
+
+   <browser:page
+       for="*"
+       name="rt.zptformfield.test.lines"
+	   template="lines.pt"
+       permission="zope.Public"
+       />
+   <browser:page
+       for="*"
+       name="rt.zptformfield.test.autocomplete_lines"
+	   template="autocomplete_lines.pt"
+       permission="zope.Public"
+       />
+   <browser:page
+       for="*"
+       name="rt.zptformfield.test.reference"
+	   template="reference.pt"
+       permission="zope.Public"
+       />
+   <browser:page
+       for="*"
+       name="rt.zptformfield.test.multivalued_reference"
+	   template="multivalued_reference.pt"
+       permission="zope.Public"
+       />
+
+   <browser:page
+       for="*"
+       name="rt.zptformfield.test.vocab"
+	   class=".view.VocabView"
+       permission="zope.Public"
+       />
+   <browser:page
+       for="*"
+       name="rt.zptformfield.output"
+	   class=".view.OutputView"
+       permission="zope.Public"
+       />
+
+
+</configure>

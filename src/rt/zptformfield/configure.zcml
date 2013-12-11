@@ -30,6 +30,20 @@
        permission="zope.Public"
        />
 
+   <browser:page
+       for="*"
+       name="rt.zptformfield.reference"
+	   template="templates/reference.pt"
+       permission="zope.Public"
+       />
+
+   <browser:page
+       for="*"
+       name="rt.zptformfield.multivalued_reference"
+	   template="templates/multivalued_reference.pt"
+       permission="zope.Public"
+       />
+
    <browser:resourceDirectory
        name="rt.zptformfield.js"
 	   directory="javascript" />
