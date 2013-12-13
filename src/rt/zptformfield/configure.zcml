@@ -44,6 +44,13 @@
        permission="zope.Public"
        />
 
+   <browser:page
+       for="*"
+       name="rt.zptformfield.tinymce"
+	   template="templates/tinymce.pt"
+       permission="zope.Public"
+       />
+
    <browser:resourceDirectory
        name="rt.zptformfield.js"
 	   directory="javascript" />

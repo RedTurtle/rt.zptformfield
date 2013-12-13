@@ -33,6 +33,12 @@
 	   template="multivalued_reference.pt"
        permission="zope.Public"
        />
+   <browser:page
+       for="*"
+       name="rt.zptformfield.test.tinymce"
+	   template="tinymce.pt"
+       permission="zope.Public"
+       />
 
    <browser:page
        for="*"

@@ -9,14 +9,6 @@
 <metal:block fill-slot="top_slot"
              tal:define="dummy python:request.set('disable_border',1)" />
 
-<head>
-
-<metal:head fill-slot="javascript_head_slot">
-    <metal:field-content use-macro="context/@@rt.zptformfield.lines/javascript_helpers" />
-</metal:head>
-
-</head>
-
 <body>
 
 <metal:content-core fill-slot="content-core">
@@ -25,10 +17,11 @@
 		<form action="@@rt.zptformfield.output" method="post">
 		
             <tal:field define="fieldName string:test_lines_field;
-                               fieldLabel string:Testing lines field;
-                               fieldHelp string:Write something the add it;
+                               fieldLabel string:Testing TinyMCE field;
+                               fieldHelp string:You can use the WYSIWYG editor below;
+							   rows python:15;
                                ">
-                <metal:field-content use-macro="context/@@rt.zptformfield.lines/field" />
+                <metal:field-content use-macro="context/@@rt.zptformfield.tinymce/field" />
             </tal:field>
 		
 			<input type="submit" name="send" value="Send" />

@@ -22,7 +22,7 @@
 <metal:content-core fill-slot="content-core">
     <metal:content-core define-macro="content-core">
         
-		<form action="@@rt.zptformfield.output">
+		<form action="@@rt.zptformfield.output" method="post">
 		
             <tal:field define="fieldName string:test_reference_field;
 			                   fake_field_name string:foo_field;

@@ -1,0 +1,52 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="rt.zptformfield"
+      xml:lang="en" lang="en">
+
+<body>
+
+<metal:define define-macro="field"
+              tal:define="fieldLabel fieldLabel|nothing;
+                          required required|nothing;
+                          cssFieldAdditionalClasses cssFieldAdditionalClasses|nothing;
+						  rows rows|python:25;
+						  cols cols|python:40;
+						  configuration_method nocall:here/@@tinymce-jsonconfiguration;
+                          configuration_json python:configuration_method(field=None);
+                          ">
+
+    <div class="field zptformfield zptTinyMCEField" data-fieldname="xxx"
+         tal:attributes="data-fieldname fieldName;
+                         class python: 'field zptformfield zptTinyMCEField ' + cssFieldAdditionalClasses if cssFieldAdditionalClasses else default;">
+    
+        <label for="" tal:attributes="for string:new_${fieldName}"
+               tal:condition="fieldLabel"
+               tal:content="fieldLabel">New field</label>
+    
+        <span class="fieldRequired" title="Required"
+              i18n:domain="plone"
+              i18n:attributes="title title_required;"
+              tal:condition="required"
+              i18n:translate="label_required">(Required)</span>
+        <br tal:condition="not:fieldHelp"/>
+
+        <div class="formHelp"
+             tal:condition="fieldHelp"
+             tal:content="fieldHelp">
+        </div>
+
+		<textarea name="xxx" id="xxx" class="mce_editable pat-tinymce" rows="25" cols="40" data-mce-config=""
+		          tal:attributes="id fieldName;
+				                  name fieldName;
+								  data-mce-config configuration_json;
+								  rows rows;
+								  cols cols;"></textarea>
+
+    </div>
+
+</metal:define>
+</body>
+
+</html>
