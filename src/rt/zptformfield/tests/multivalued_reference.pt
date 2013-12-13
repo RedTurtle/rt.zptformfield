@@ -21,21 +21,21 @@
 
 <metal:content-core fill-slot="content-core">
     <metal:content-core define-macro="content-core">
-        
-		<form action="@@rt.zptformfield.output" method="post">
-		
+
+        <form action="@@rt.zptformfield.output" method="post">
+
             <tal:field define="fieldName string:test_multivalued_reference_field;
-			                   fake_field_name string:foo_multivalued_field;
+                               fake_field_name string:foo_multivalued_field;
                                fieldLabel string:Testing multivalued reference browser field;
                                fieldHelp string:Use the Plone reference browser feature. Please run this view on a site content;
                                ">
                 <metal:field-content use-macro="context/@@rt.zptformfield.multivalued_reference/field" />
             </tal:field>
 
-			<input type="submit" name="send" value="Send" />
-		
-		</form>
-		
+            <input type="submit" name="send" value="Send" />
+
+        </form>
+
     </metal:content-core>
 </metal:content-core>
 

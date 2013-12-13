@@ -13,21 +13,21 @@
 
 <metal:content-core fill-slot="content-core">
     <metal:content-core define-macro="content-core">
-        
-		<form action="@@rt.zptformfield.output" method="post">
-		
+
+        <form action="@@rt.zptformfield.output" method="post">
+
             <tal:field define="fieldName string:test_lines_field;
                                fieldLabel string:Testing TinyMCE field;
                                fieldHelp string:You can use the WYSIWYG editor below;
-							   rows python:15;
+                               rows python:15;
                                ">
                 <metal:field-content use-macro="context/@@rt.zptformfield.tinymce/field" />
             </tal:field>
-		
-			<input type="submit" name="send" value="Send" />
-		
-		</form>
-		
+
+            <input type="submit" name="send" value="Send" />
+
+        </form>
+
     </metal:content-core>
 </metal:content-core>
 

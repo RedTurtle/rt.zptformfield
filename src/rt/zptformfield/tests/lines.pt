@@ -22,19 +22,19 @@
 <metal:content-core fill-slot="content-core">
     <metal:content-core define-macro="content-core">
         
-		<form action="@@rt.zptformfield.output" method="post">
-		
+        <form action="@@rt.zptformfield.output" method="post">
+        
             <tal:field define="fieldName string:test_lines_field;
                                fieldLabel string:Testing lines field;
                                fieldHelp string:Write something the add it;
                                ">
                 <metal:field-content use-macro="context/@@rt.zptformfield.lines/field" />
             </tal:field>
-		
-			<input type="submit" name="send" value="Send" />
-		
-		</form>
-		
+        
+            <input type="submit" name="send" value="Send" />
+        
+        </form>
+
     </metal:content-core>
 </metal:content-core>
 

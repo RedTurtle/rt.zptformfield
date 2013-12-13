@@ -12,44 +12,44 @@
    <browser:page
        for="*"
        name="rt.zptformfield.test.lines"
-	   template="lines.pt"
+       template="lines.pt"
        permission="zope.Public"
        />
    <browser:page
        for="*"
        name="rt.zptformfield.test.autocomplete_lines"
-	   template="autocomplete_lines.pt"
+       template="autocomplete_lines.pt"
        permission="zope.Public"
        />
    <browser:page
        for="*"
        name="rt.zptformfield.test.reference"
-	   template="reference.pt"
+       template="reference.pt"
        permission="zope.Public"
        />
    <browser:page
        for="*"
        name="rt.zptformfield.test.multivalued_reference"
-	   template="multivalued_reference.pt"
+       template="multivalued_reference.pt"
        permission="zope.Public"
        />
    <browser:page
        for="*"
        name="rt.zptformfield.test.tinymce"
-	   template="tinymce.pt"
+       template="tinymce.pt"
        permission="zope.Public"
        />
 
    <browser:page
        for="*"
        name="rt.zptformfield.test.vocab"
-	   class=".view.VocabView"
+       class=".view.VocabView"
        permission="zope.Public"
        />
    <browser:page
        for="*"
        name="rt.zptformfield.output"
-	   class=".view.OutputView"
+       class=".view.OutputView"
        permission="zope.Public"
        />
 

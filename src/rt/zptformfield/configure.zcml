@@ -9,54 +9,54 @@
    <browser:page
        for="*"
        name="rt.zptformfield.lines_model"
-	   class=".base.BaseMacroView"
-	   template="templates/base_lines.pt"
+       class=".base.BaseMacroView"
+       template="templates/base_lines.pt"
        permission="zope.Public"
        />
 
    <browser:page
        for="*"
        name="rt.zptformfield.lines"
-	   class=".lines.LinesMacroView"
-	   template="templates/lines.pt"
+       class=".lines.LinesMacroView"
+       template="templates/lines.pt"
        permission="zope.Public"
        />
 
    <browser:page
        for="*"
        name="rt.zptformfield.autocomplete_lines"
-	   class=".autocomplete_lines.AutocompleteLinesMacroView"
-	   template="templates/autocomplete_lines.pt"
+       class=".autocomplete_lines.AutocompleteLinesMacroView"
+       template="templates/autocomplete_lines.pt"
        permission="zope.Public"
        />
 
    <browser:page
        for="*"
        name="rt.zptformfield.reference"
-	   template="templates/reference.pt"
+       template="templates/reference.pt"
        permission="zope.Public"
        />
 
    <browser:page
        for="*"
        name="rt.zptformfield.multivalued_reference"
-	   template="templates/multivalued_reference.pt"
+       template="templates/multivalued_reference.pt"
        permission="zope.Public"
        />
 
    <browser:page
        for="*"
        name="rt.zptformfield.tinymce"
-	   template="templates/tinymce.pt"
+       template="templates/tinymce.pt"
        permission="zope.Public"
        />
 
    <browser:resourceDirectory
        name="rt.zptformfield.js"
-	   directory="javascript" />
+       directory="javascript" />
 
    <browser:resourceDirectory
        name="rt.zptformfield.resources"
-	   directory="resources" />
+       directory="resources" />
 
 </configure>
