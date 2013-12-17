@@ -11,10 +11,11 @@
               tal:define="fieldLabel fieldLabel|nothing;
                           required required|nothing;
                           cssFieldAdditionalClasses cssFieldAdditionalClasses|nothing;
-						  rows rows|python:25;
-						  cols cols|python:40;
-						  configuration_method nocall:here/@@tinymce-jsonconfiguration;
+                          rows rows|python:25;
+                          cols cols|python:40;
+                          configuration_method nocall:here/@@tinymce-jsonconfiguration;
                           configuration_json python:configuration_method(field=None);
+                          value value|nothing;
                           ">
 
     <div class="field zptformfield zptTinyMCEField" data-fieldname="xxx"
@@ -37,12 +38,13 @@
              tal:content="fieldHelp">
         </div>
 
-		<textarea name="xxx" id="xxx" class="mce_editable pat-tinymce" rows="25" cols="40" data-mce-config=""
-		          tal:attributes="id fieldName;
-				                  name fieldName;
-								  data-mce-config configuration_json;
-								  rows rows;
-								  cols cols;"></textarea>
+        <textarea name="xxx" id="xxx" class="mce_editable pat-tinymce" rows="25" cols="40" data-mce-config=""
+                  tal:attributes="id fieldName;
+                                  name fieldName;
+                                  data-mce-config configuration_json;
+                                  rows rows;
+                                  cols cols;"
+                  tal:content="python:request.get(fieldName) or value"></textarea>
 
     </div>
 

@@ -28,6 +28,7 @@
                                source string:${portal_url}/@@rt.zptformfield.test.vocab;
                                fieldLabel string:Testing lines field;
                                fieldHelp string:Write something and test the autocomplete feature;
+							   elements python:({'title': 'Aaa', 'value': 'aaa'}, );
                                ">
                 <metal:field-content use-macro="context/@@rt.zptformfield.autocomplete_lines/field" />
             </tal:field>

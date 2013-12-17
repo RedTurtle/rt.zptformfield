@@ -21,6 +21,7 @@
                           fieldType fieldType|string:text;
                           pattern pattern|nothing;
                           cssFieldAdditionalClasses cssFieldAdditionalClasses|nothing;
+                          elements elements|nothing;
                           ">
 
     <div class="field zptformfield zptAutocompleteLinesField"
