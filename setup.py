@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.1.0a1'
+version = '0.1.0a2.dev0'
 
 setup(name='rt.zptformfield',
       version=version,
