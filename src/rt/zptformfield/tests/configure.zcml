@@ -5,7 +5,7 @@
     i18n_domain="rt.zptformfield">
 
    <include package="archetypes.schemaextender" />
-   <include package="archetypes.referencebrowserwidget "/>
+   <include package="archetypes.referencebrowserwidget"/>
    
    <adapter factory=".extender.FooExtender" />
 

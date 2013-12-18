@@ -26,7 +26,7 @@
         
             <tal:field define="fieldName string:test_lines_field;
                                fieldLabel string:Testing lines field;
-                               fieldHelp string:Write something the add it;
+                               fieldHelp string:Write something, then add it;
 							   elements python:({'title': 'Foo', 'value': 'foo'}, {'title': 'Bar', 'value': 'bar'}, {'title': 'Baz', 'value': 'baz'},);
                                ">
                 <metal:field-content use-macro="context/@@rt.zptformfield.lines/field" />
