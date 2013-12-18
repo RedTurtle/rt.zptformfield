@@ -18,7 +18,8 @@
               tal:define="fieldLabel fieldLabel|nothing;
                           required required|nothing;
                           startup_directory startup_directory|context/absolute_url;
-                          helper python:context.restrictedTraverse('refbrowserhelper', nothing);
+                          context_helper nocall:context_helper|nocall:context;
+                          helper python:context_helper.restrictedTraverse('refbrowserhelper', nothing);
                           at_url helper/getAtURL|nothing;
                           portal_url context/@@plone_portal_state/portal_url;
                           fake_field_name fake_field_name|fieldName;

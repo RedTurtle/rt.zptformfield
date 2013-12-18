@@ -18,7 +18,8 @@
               tal:define="fieldLabel fieldLabel|nothing;
                           required required|nothing;
                           startup_directory startup_directory|context/absolute_url;
-                          helper python:context.restrictedTraverse('refbrowserhelper', nothing);
+                          context_helper nocall:context_helper|nocall:context;
+                          helper python:context_helper.restrictedTraverse('refbrowserhelper', nothing);
                           at_url helper/getAtURL|nothing;
                           portal_url context/@@plone_portal_state/portal_url;
                           fake_field_name fake_field_name|fieldName;
@@ -55,21 +56,21 @@
         </div>
 
         <input type="hidden" name="xxx:default:list" value=""
-		       tal:attributes="name string:${fieldName}:default:list" />
+               tal:attributes="name string:${fieldName}:default:list" />
         <input type="hidden" value="1" name="xxx-sortable"
-		       tal:attributes="name string:${fieldName}-sortable"/>
+               tal:attributes="name string:${fieldName}-sortable"/>
 
         <div style="float: left"> <!-- don't remove this. it is needed for DOM traversal -->
         </div>
         <ul class="visualNoMarker" id="ref_browser_items_xxx"
-		    tal:attributes="id string:ref_browser_items_${fieldName}">
+            tal:attributes="id string:ref_browser_items_${fieldName}">
         </ul>
 
         <input type="button" rel="#atrb_xxx" src=""
-		       class="searchButton addreference" value="Add..."
-			   i18n:domain="plone" i18n:attributes="value label_add;"
-			   tal:attributes="rel string:#atrb_${fieldName};
-			                   src string:${startup_directory}/refbrowser_popup?fieldName=${fieldName}&amp;fieldRealName=${fake_field_name}&amp;at_url=${at_url}&amp;search_index=${search_index};" />
+               class="searchButton addreference" value="Add..."
+               i18n:domain="plone" i18n:attributes="value label_add;"
+               tal:attributes="rel string:#atrb_${fieldName};
+                               src string:${startup_directory}/refbrowser_popup?fieldName=${fieldName}&amp;fieldRealName=${fake_field_name}&amp;at_url=${at_url}&amp;search_index=${search_index};" />
 
     </div>
 

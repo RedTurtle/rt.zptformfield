@@ -27,7 +27,9 @@
             <tal:field define="fieldName string:test_reference_field;
                                fake_field_name string:foo_field;
                                fieldLabel string:Testing reference browser field;
-                               fieldHelp string:Use the Plone reference browser feature. Please run this view on a site content;
+                               fieldHelp string:Use the Plone reference browser feature. Please we sure that this Plone site behave the &quot;Welcome to Plone&quot; default page;
+                               context_helper nocall:context/front-page|nocall:context;
+                               startup_directory context/front-page/absolute_url|context/absolute_url;
                                ">
                 <metal:field-content use-macro="context/@@rt.zptformfield.reference/field" />
             </tal:field>
