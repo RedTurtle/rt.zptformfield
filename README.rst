@@ -80,20 +80,20 @@ Call the macro
 
 .. code-block:: xml
 
-	<tal:field define="fieldName string:test_lines_field;
-	                   fieldLabel string:Testing lines field;
-	                   fieldHelp string:Write something, then add it;
-	                   ">
-	    <metal:field-content use-macro="context/@@rt.zptformfield.lines/field" />
-	</tal:field>
+    <tal:field define="fieldName string:test_lines_field;
+                       fieldLabel string:Testing lines field;
+                       fieldHelp string:Write something, then add it;
+                       ">
+        <metal:field-content use-macro="context/@@rt.zptformfield.lines/field" />
+    </tal:field>
 
 You need to include a JavaScript in your final HTML.
 
 .. code-block:: xml
 
-	<metal:head fill-slot="javascript_head_slot">
-	    <metal:field-content use-macro="context/@@rt.zptformfield.lines/javascript_helpers" />
-	</metal:head>
+    <metal:head fill-slot="javascript_head_slot">
+        <metal:field-content use-macro="context/@@rt.zptformfield.lines/javascript_helpers" />
+    </metal:head>
 
 Autocomplete lines field
 ------------------------
@@ -128,21 +128,21 @@ Call the macro
 
 .. code-block:: xml
 
-	<tal:field define="fieldName string:test_lines_field;
-	                   source string:${portal_url}/@@rt.zptformfield.test.vocab;
-	                   fieldLabel string:Testing autocomplete field;
-	                   fieldHelp string:Write something and test the autocomplete feature;
-	                   ">
-	    <metal:field-content use-macro="context/@@rt.zptformfield.autocomplete_lines/field" />
-	</tal:field>
+    <tal:field define="fieldName string:test_lines_field;
+                       source string:${portal_url}/@@rt.zptformfield.test.vocab;
+                       fieldLabel string:Testing autocomplete field;
+                       fieldHelp string:Write something and test the autocomplete feature;
+                       ">
+        <metal:field-content use-macro="context/@@rt.zptformfield.autocomplete_lines/field" />
+    </tal:field>
 
 You need to include a JavaScript in your final HTML.
 
 .. code-block:: xml
 
-	<metal:head fill-slot="javascript_head_slot">
-	    <metal:field-content use-macro="context/@@rt.zptformfield.autocomplete_lines/javascript_helpers" />
-	</metal:head>
+    <metal:head fill-slot="javascript_head_slot">
+        <metal:field-content use-macro="context/@@rt.zptformfield.autocomplete_lines/javascript_helpers" />
+    </metal:head>
 
 TinyMCE Field
 -------------
@@ -175,14 +175,14 @@ Call the macro
 
 .. code-block:: xml
 
-	<tal:field define="fieldName string:test_lines_field;
-	                   fieldLabel string:Testing TinyMCE field;
-	                   fieldHelp string:You can use the WYSIWYG editor below;
-	                   rows python:15;
-					   value string:The cat is on the table;
-	                   ">
-	    <metal:field-content use-macro="context/@@rt.zptformfield.tinymce/field" />
-	</tal:field>
+    <tal:field define="fieldName string:test_lines_field;
+                       fieldLabel string:Testing TinyMCE field;
+                       fieldHelp string:You can use the WYSIWYG editor below;
+                       rows python:15;
+                       value string:The cat is on the table;
+                       ">
+        <metal:field-content use-macro="context/@@rt.zptformfield.tinymce/field" />
+    </tal:field>
 
 Reference Field
 ---------------
@@ -219,13 +219,13 @@ Call the macro
 
 .. code-block:: xml
 
-	<tal:field define="fieldName string:test_reference_field;
-	                   fake_field_name string:foo_field;
-	                   fieldLabel string:Testing reference browser field;
-	                   fieldHelp string:Use the Plone reference browser feature.
-	                   ">
-	    <metal:field-content use-macro="context/@@rt.zptformfield.reference/field" />
-	</tal:field>
+    <tal:field define="fieldName string:test_reference_field;
+                       fake_field_name string:foo_field;
+                       fieldLabel string:Testing reference browser field;
+                       fieldHelp string:Use the Plone reference browser feature.
+                       ">
+        <metal:field-content use-macro="context/@@rt.zptformfield.reference/field" />
+    </tal:field>
 
 In the example above we didn't provide ``context_helper`` parameter so it *must* be called on a Plone content
 that behave the "foo_field" singlevalued reference field.
@@ -234,9 +234,9 @@ You need to include a JavaScript in your final HTML.
 
 .. code-block:: xml
 
-	<metal:head fill-slot="javascript_head_slot">
-	    <metal:field-content use-macro="context/@@rt.zptformfield.reference/javascript_helpers" />
-	</metal:head>
+    <metal:head fill-slot="javascript_head_slot">
+        <metal:field-content use-macro="context/@@rt.zptformfield.reference/javascript_helpers" />
+    </metal:head>
 
 Multivalued Reference Field
 ---------------------------
@@ -262,13 +262,13 @@ Call the macro
 
 .. code-block:: xml
 
-	<tal:field define="fieldName string:test_multivalued_reference_field;
-	                   fake_field_name string:relatedItems;
-	                   fieldLabel string:Testing multivalued reference browser field;
-	                   fieldHelp string:Use the Plone reference browser feature.
-	                   ">
-	    <metal:field-content use-macro="context/@@rt.zptformfield.multivalued_reference/field" />
-	</tal:field>
+    <tal:field define="fieldName string:test_multivalued_reference_field;
+                       fake_field_name string:relatedItems;
+                       fieldLabel string:Testing multivalued reference browser field;
+                       fieldHelp string:Use the Plone reference browser feature.
+                       ">
+        <metal:field-content use-macro="context/@@rt.zptformfield.multivalued_reference/field" />
+    </tal:field>
 
 In the example above we didn't provide ``context_helper`` parameter so it *must* be called on a Plone content
 that behave the "relatedItems" multivalued reference field (by default: all content types).
@@ -277,9 +277,9 @@ You need to include a JavaScript in your final HTML.
 
 .. code-block:: xml
 
-	<metal:head fill-slot="javascript_head_slot">
-	    <metal:field-content use-macro="context/@@rt.zptformfield.multivalued_reference/javascript_helpers" />
-	</metal:head>
+    <metal:head fill-slot="javascript_head_slot">
+        <metal:field-content use-macro="context/@@rt.zptformfield.multivalued_reference/javascript_helpers" />
+    </metal:head>
 
 Live examples
 =============
@@ -289,14 +289,14 @@ file.
 
 ::
 
-	[instance]
-	eggs +=
-	    ...
-	    rt.zptformfield
-	
-	zcml +=
-	    ...
-	    rt.zptformfield:tests.zcml
+    [instance]
+    eggs +=
+        ...
+        rt.zptformfield
+    
+    zcml +=
+        ...
+        rt.zptformfield:tests.zcml
 
 =======
 Authors

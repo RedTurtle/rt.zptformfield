@@ -20,7 +20,7 @@
                                fieldLabel string:Testing TinyMCE field;
                                fieldHelp string:You can use the WYSIWYG editor below;
                                rows python:15;
-							   value string:The cat is on the table;
+                               value string:The cat is on the table;
                                ">
                 <metal:field-content use-macro="context/@@rt.zptformfield.tinymce/field" />
             </tal:field>
