@@ -48,7 +48,7 @@ Every field has some custom options you can/must configure, but some of them are
 ``cssFieldAdditionalClasses``
     Additional CSS classes that will be appended to the div containing the whole field
 
-Lines field
+Lines Field
 -----------
 
 This field can be used to provide a list of elements (strings) for the submitted form.
@@ -95,7 +95,7 @@ You need to include a JavaScript in your final HTML.
         <metal:field-content use-macro="context/@@rt.zptformfield.lines/javascript_helpers" />
     </metal:head>
 
-Autocomplete lines field
+Autocomplete Lines Field
 ------------------------
 
 This field can be used to provide a list of elements (strings) for the submitted form.
@@ -281,10 +281,71 @@ You need to include a JavaScript in your final HTML.
         <metal:field-content use-macro="context/@@rt.zptformfield.multivalued_reference/javascript_helpers" />
     </metal:head>
 
+Calendar Field
+--------------
+
+This field can be used to submit a date (or date-time) using the Plone default calendar.
+Date can be filled by using a set of HTML select elements or with a popup calendar widget.
+
+.. image:: http://blog.redturtle.it/pypi-images/rt.zptformfield/rt.zptformfield-0.2.0-calendar01.png
+   :alt: Calendar field
+   :align: center
+
+Additional parameters
+~~~~~~~~~~~~~~~~~~~~~
+
+``value``
+    The date to be displayed (a `Zope DateTime`__ object). Default will not show any date.
+``show_hm``
+    Boolean value for showing the hours/minutes widget elements. Default will show them.
+``show_ymd``
+    Boolean value for showing the day widget elements. Default will show them.
+``starting_year``
+    Integer value for defining the first year to be used in the year combo box.
+``ending_year``
+    Integer value for defining the last year to be used in the year combo box.
+``future_years``
+    Integer value for defining how many years in the future (from current date) will be shown
+    in the calendar widget. Will be ignored if ``ending_year`` is provided.  
+``minute_step``
+    If minutes combobox is shown, define the interval between minutes values. Plone default is 5.
+
+__ https://pypi.python.org/pypi/DateTime
+
+How to use
+~~~~~~~~~~
+
+Call the macro
+
+.. code-block:: xml
+
+    <tal:field define="fieldName string:test_calendar_field;
+                       fieldLabel string:Testing Calendar field;
+                       fieldHelp string:The standard Plone calendar;">
+        <metal:field-content use-macro="context/@@rt.zptformfield.calendar/field" />
+    </tal:field>
+
+You need to include a JavaScript in your final HTML.
+
+.. code-block:: xml
+
+    <metal:head fill-slot="javascript_head_slot">
+        <metal:field-content use-macro="context/@@rt.zptformfield.calendar/javascript_helpers" />
+    </metal:head>
+
+Finally, the calendar popup needs some CSS styles:
+
+.. code-block:: xml
+
+    <metal:head fill-slot="style_slot">
+        <link rel="stylesheet" type="text/css" href="jscalendar/calendar-system.css"
+              tal:attributes="href string:$portal_url/jscalendar/calendar-system.css" />
+    </metal:head>
+
 Live examples
 =============
 
-This product will contain a set of demo views for all fields. You must activate them by including the ``tests.zcml``
+This product contains a set of demo views for all fields. You must activate them by including the ``tests.zcml``
 file.
 
 ::
@@ -297,6 +358,10 @@ file.
     zcml +=
         ...
         rt.zptformfield:tests.zcml
+
+Check `the code`__ for an updated list of examples.
+
+__ https://github.com/RedTurtle/rt.zptformfield/blob/master/src/rt/zptformfield/tests/configure.zcml
 
 =======
 Authors

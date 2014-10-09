@@ -1,0 +1,52 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="rt.zptformfield">
+
+<metal:block fill-slot="top_slot"
+             tal:define="dummy python:request.set('disable_border',1)" />
+
+
+<head>
+<metal:head fill-slot="javascript_head_slot">
+    <metal:field-content use-macro="context/@@rt.zptformfield.calendar/javascript_helpers" />
+</metal:head>
+
+<metal:head fill-slot="style_slot">
+    <link rel="stylesheet" type="text/css" href="jscalendar/calendar-system.css"
+	      tal:attributes="href string:$portal_url/jscalendar/calendar-system.css" />
+</metal:head>
+</head>
+
+<body>
+
+<metal:content-core fill-slot="content-core">
+    <metal:content-core define-macro="content-core">
+
+        <form action="@@rt.zptformfield.output" method="post">
+
+            <tal:field define="fieldName string:test_calendar_field;
+                               fieldLabel string:Testing Calendar field;
+                               fieldHelp string:The standard Plone calendar;
+							   DateTime python:modules['DateTime'].DateTime;
+                               value python:DateTime('24/05/1980');
+							   show_hm nothing;
+							   starting_year python:1975;
+							   future_years python:2;
+                               ">
+                <metal:field-content use-macro="context/@@rt.zptformfield.calendar/field" />
+            </tal:field>
+
+            <input type="submit" name="send" value="Send" />
+
+        </form>
+
+    </metal:content-core>
+</metal:content-core>
+
+</body>
+</html>
+

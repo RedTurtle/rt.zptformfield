@@ -51,6 +51,13 @@
        permission="zope.Public"
        />
 
+   <browser:page
+       for="*"
+       name="rt.zptformfield.calendar"
+       template="templates/calendar.pt"
+       permission="zope.Public"
+       />
+
    <browser:resourceDirectory
        name="rt.zptformfield.js"
        directory="javascript" />

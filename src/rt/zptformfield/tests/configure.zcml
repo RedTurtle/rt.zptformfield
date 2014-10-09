@@ -39,6 +39,12 @@
        template="tinymce.pt"
        permission="zope.Public"
        />
+   <browser:page
+       for="*"
+       name="rt.zptformfield.test.calendar"
+       template="calendar.pt"
+       permission="zope.Public"
+       />
 
    <browser:page
        for="*"

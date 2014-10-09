@@ -1,11 +1,11 @@
 Changelog
 =========
 
-0.1.0a2 (unreleased)
---------------------
+0.2.0 (unreleased)
+------------------
 
-- Nothing changed yet.
-
+- Added the Calendar field support and example
+  [keul]
 
 0.1.0a1 (2013-12-18)
 --------------------

@@ -1,0 +1,69 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="rt.zptformfield"
+      xml:lang="en" lang="en">
+
+<head>
+	
+<metal:define define-macro="javascript_helpers">
+    <script type="text/javascript" src=""
+            tal:attributes="src string:${portal_url}/jscalendar/calendar_stripped.js">
+    </script>
+    <script type="text/javascript" src=""
+	        tal:define="lang context/@@plone_portal_state/language;"
+            tal:attributes="src string:${portal_url}/jscalendar/calendar-${lang}.js">
+    </script>
+</metal:define>
+
+</head>
+
+<body>
+
+<metal:define define-macro="field"
+              tal:define="fieldLabel fieldLabel|nothing;
+                          required required|nothing;
+                          cssFieldAdditionalClasses cssFieldAdditionalClasses|nothing;
+                          value value|nothing;
+                          show_hm show_hm|python:1;
+                          show_ymd show_ymd|python:1;
+                          starting_year starting_year|nothing;
+                          ending_year ending_year|nothing;
+                          future_years future_years|nothing;
+                          minute_step minute_step|python:5;
+                          inputname fieldName;
+                          formname formname|string:form;
+                          inputvalue python:value if value!='None' else '';
+                          ">
+
+    <div class="field zptformfield zptCalendarField" data-fieldname="xxx"
+         tal:attributes="data-fieldname fieldName;
+                         class python: 'field zptformfield zptCalendarField ' + cssFieldAdditionalClasses if cssFieldAdditionalClasses else default;">
+    
+        <label for="" tal:attributes="for string:new_${fieldName}"
+               tal:condition="fieldLabel"
+               tal:content="fieldLabel">New field</label>
+    
+        <span class="fieldRequired" title="Required"
+              i18n:domain="plone"
+              i18n:attributes="title title_required;"
+              tal:condition="required"
+              i18n:translate="label_required">(Required)</span>
+        <br tal:condition="not:fieldHelp"/>
+
+        <div class="formHelp"
+             tal:condition="fieldHelp"
+             tal:content="fieldHelp">
+        </div>
+
+        <metal:box use-macro="here/calendar_macros/macros/calendarDatePickerBox">
+          <!-- a calendar, hopefully -->
+        </metal:box>
+
+    </div>
+
+</metal:define>
+</body>
+
+</html>

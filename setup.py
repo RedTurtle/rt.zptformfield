@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.1.0a2.dev0'
+version = '0.2.0.dev0'
 
 setup(name='rt.zptformfield',
       version=version,
@@ -11,8 +11,12 @@ setup(name='rt.zptformfield',
       # Get more strings from
       # http://pypi.python.org/pypi?:action=list_classifiers
       classifiers=[
-        "Development Status :: 3 - Alpha",
+        "Development Status :: 4 - Beta",
         "Framework :: Plone",
+        "Framework :: Plone :: 4.0",
+        "Framework :: Plone :: 4.1",
+        "Framework :: Plone :: 4.2",
+        "Framework :: Plone :: 4.3",
         "Framework :: Zope2",
         "Programming Language :: Python",
         "Intended Audience :: Developers",
