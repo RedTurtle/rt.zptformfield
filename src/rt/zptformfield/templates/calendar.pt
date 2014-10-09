@@ -6,14 +6,14 @@
       xml:lang="en" lang="en">
 
 <head>
-	
+
 <metal:define define-macro="javascript_helpers">
     <script type="text/javascript" src=""
             tal:attributes="src string:${portal_url}/jscalendar/calendar_stripped.js">
     </script>
     <script type="text/javascript" src=""
-	        tal:define="lang context/@@plone_portal_state/language;"
-            tal:attributes="src string:${portal_url}/jscalendar/calendar-${lang}.js">
+            tal:define="calendar_lang calendar_lang|string:en"
+            tal:attributes="src string:${portal_url}/jscalendar/calendar-${calendar_lang}.js">
     </script>
 </metal:define>
 

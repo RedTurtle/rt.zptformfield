@@ -312,8 +312,15 @@ Additional parameters
     in the calendar widget. Will be ignored if ``ending_year`` is provided.  
 ``minute_step``
     If minutes combobox is shown, define the interval between minutes values. Plone default is 5.
+``calendar_lang``
+    Language of the calendar popup UI. For an old and never fixed `Plone bug`__ the default is to
+    english language and not to the current language.
+    Change at your own risk. Also: *note* that this parameter is for the ``javascript_helpers``
+    macros (see example below)
 
 __ https://pypi.python.org/pypi/DateTime
+__ https://dev.plone.org/ticket/13189
+
 
 How to use
 ~~~~~~~~~~
@@ -332,7 +339,7 @@ You need to include a JavaScript in your final HTML.
 
 .. code-block:: xml
 
-    <metal:head fill-slot="javascript_head_slot">
+    <metal:head fill-slot="javascript_head_slot" tal:define="calendar_lang context/@@plone_portal_state/language;">
         <metal:field-content use-macro="context/@@rt.zptformfield.calendar/javascript_helpers" />
     </metal:head>
 

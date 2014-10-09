@@ -11,7 +11,7 @@
 
 
 <head>
-<metal:head fill-slot="javascript_head_slot">
+<metal:head fill-slot="javascript_head_slot" tal:define="calendar_lang context/@@plone_portal_state/language;">
     <metal:field-content use-macro="context/@@rt.zptformfield.calendar/javascript_helpers" />
 </metal:head>
 

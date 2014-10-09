@@ -4,8 +4,11 @@ Changelog
 0.2.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
-
+- Calendar popup UI language default to english
+  [keul]
+- Added a way to change calendar language, but added the
+  proper warning in the documentation
+  [keul]
 
 0.2.0 (2014-10-09)
 ------------------
