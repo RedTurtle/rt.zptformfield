@@ -291,6 +291,9 @@ Date can be filled by using a set of HTML select elements or with a popup calend
    :alt: Calendar field
    :align: center
 
+This field is based on Plone inner calendar support (JavaScript and ZPT macros) so you can't use this outside
+Plone.
+
 Additional parameters
 ~~~~~~~~~~~~~~~~~~~~~
 
