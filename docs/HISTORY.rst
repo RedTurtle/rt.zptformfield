@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.2.1 (unreleased)
+0.2.1 (2015-09-08)
 ------------------
 
 - Calendar popup UI language default to english
