@@ -335,7 +335,8 @@ Call the macro
         <metal:field-content use-macro="context/@@rt.zptformfield.calendar/field" />
     </tal:field>
 
-You need to include a JavaScript in your final HTML.
+You need to include a JavaScript in your final HTML. Another **warning** about the usage of
+``calendar_lang`` parameter: it's buggy.
 
 .. code-block:: xml
 

@@ -8,6 +8,10 @@
 <head>
 
 <metal:define define-macro="javascript_helpers">
+
+    <script type="text/javascript" src=""
+            tal:attributes="src string:${portal_url}/calendar_formfield.js ">
+    </script>
     <script type="text/javascript" src=""
             tal:attributes="src string:${portal_url}/jscalendar/calendar_stripped.js">
     </script>
@@ -15,6 +19,7 @@
             tal:define="calendar_lang calendar_lang|string:en"
             tal:attributes="src string:${portal_url}/jscalendar/calendar-${calendar_lang}.js">
     </script>
+
 </metal:define>
 
 </head>

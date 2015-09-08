@@ -9,6 +9,9 @@ Changelog
 - Added a way to change calendar language, but added the
   proper warning in the documentation
   [keul]
+- Added the missing but needed ``calendar_formfield`` parameter.
+  Calendar JavaScript was not working.
+  [keul]
 
 0.2.0 (2014-10-09)
 ------------------
